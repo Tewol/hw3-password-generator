@@ -7,16 +7,13 @@
 
 * Clicking generate password button will present a series of prompts for password criteria
 
-* System will prompt you to select password critereia 
+    * System will promp you to enter password length between 8 and 128
 
-* System will promp you to enter password length between 8 and 128
-
-* System will prompt you to select character type of the following: 
-    * lowercase, 
-    * uppercase, 
-    * numeric, and/or 
-    * special characters
-
+    * System will prompt you to select character type of the following: 
+        * numeric,
+        * lowercase, 
+        * uppercase, 
+        * special characters
 
 * Password should include atlist one character type 
 
