@@ -6,25 +6,28 @@ var numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 var specialchar = ['!','@','#','%','^','&','*','(',')','-','+'];
 
 
-function prompts() {
+function getPrompts() {
 
   var length = prompt("Choose password length between 8 and 128");
+  
+  if((length < 8)||(length > 128)){
+    alert("Password length is not between 8 and 128 try again");
+    return;
+      
+  }
+
   var getRandomNumber = confirm("Click Ok if you want to include numbers in your password?");
   var getRandomLower = confirm("Click Ok if you want to include lower caseletters in your password?");
   var getRandomUppder = confirm("Click Ok if you want to include upper casee letters for your password?");
   var getRandomSpecial = confirm("Click Ok if you want to include special character for your password?");
   
-  
-  if((length < 8)||(length > 128)){
-    alert("Choose password length between 8 and 128");
-      
-  }else if((!getRandomNumber)&&(!getRandomLower)&&(!getRandomUppder)&&(!getRandomSpecial)){
-    alert("Must choose at least one type.");
-    //checks if atlist one character type is entered 
+  if((!getRandomNumber)&&(!getRandomLower)&&(!getRandomUppder)&&(!getRandomSpecial)){
+    alert("Must choose at least one type, try again");
+    return;
   }else
     alert("Selected criteria satisfies strong password rule");
 
-  //an object 
+  //an object
   var responses = {
     length: length,
     number:getRandomNumber,
@@ -39,7 +42,7 @@ function prompts() {
 
 // this generates password by joining answers from the prompt 
 function generatePassword() {
-  var UserChoice = prompts();
+  var UserChoice = getPrompts();
   var results = [];
   var displayPassword = "";
 
